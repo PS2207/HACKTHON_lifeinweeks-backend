@@ -1,3 +1,28 @@
+n = int(input())
+arr = [int(input()) for i in range(n)]  #can create a list using list() function, or using []
+print(arr)
+'''
+I/p:
+3 #no of elements in array
+4
+5
+6
+O/p: [4, 5, 6]
+'''
+#_______________________________________________________________
+n=int(input())
+arr=list(map(int, input().split()))
+if len(arr) != n:
+    print(f"Error: Expected {n} elements but got {len(arr)}.")
+else:
+    print(arr)
+'''
+i/p:
+3
+4 5 6 7 
+o/p: Error: Expected 3 elements but got 4. 
+'''    
+#________________________________________________________________  
 '''
 #Take Array Input-
 1.Using split() for space-separated input
