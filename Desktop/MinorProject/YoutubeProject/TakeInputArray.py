@@ -1,5 +1,6 @@
 n = int(input())
 arr = [int(input()) for i in range(n)]  #can create a list using list() function, or using []
+arr.append(2)# add one more element in list use append(),this doesn't return value
 print(arr)
 '''
 I/p:
@@ -7,7 +8,7 @@ I/p:
 4
 5
 6
-O/p: [4, 5, 6]
+O/p: [4, 5, 6, 2]
 '''
 #_______________________________________________________________
 n=int(input())
@@ -21,7 +22,39 @@ i/p:
 3
 4 5 6 7 
 o/p: Error: Expected 3 elements but got 4. 
-'''    
+''' 
+#_____________________________________________
+#Adding element in a list
+arr=[3,5,7,8,9,2]
+arr.extend([0,1,2])
+print(arr)  #[3,5,7,8,9,2,  0,1,2]
+#-------------------------------
+arr=[3,5,7,8,9,2]
+arr.insert(2,88)
+print(arr) #[3,5,88,7,8,9,2]
+#___________________________________________
+
+#Delete elements from a list/array
+arr=[3,5,7,8,9,2]
+arr.remove(9)
+print(arr) #delete specific element, here 9.  i/p:[3,5,7,8,2]
+#----------------------------------------------------------
+arr=[3,5,7,8,9,2]
+arr.pop(2) #delete element by index 2 & return,without index it removes last element.
+print(arr) # i/p:[3,5,8,9,2] 
+#-------------------------------
+arr=[3,5,7,8,9,2]
+del arr[3]  #delete by index
+print(arr) # i/p:[3,5,7,9,2]
+#-------------------------------
+arr=[3,5,7,8,9,2]
+del arr[1:5] # use 'del [start.stop]' to delete a range, i/p:[3 , 2] 
+print(arr)
+#-------------------------------
+arr=[3,5,7,8,9,2]
+arr.clear() #delete all
+print(arr) # []
+#___________________________________
 #________________________________________________________________  
 '''
 #Take Array Input-
