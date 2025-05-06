@@ -124,6 +124,25 @@ list(...) - collects integers into a list
 
 '''
 
+1.All Problems
+  Decidable(Solvable by an algorithm)
+  Undecidable(No algorithm exists, e.g. Halting Problem)
+2 Decidable Problems:
+  Tractable: Solvable in polynomial, e.g. P)
+  Example:Sorting, Sorting Path
+  Intractable: Require superploynomial/exponential time, e.g, NP-Complete.
+  Example: Traveling Salesman, Boolean SAT
+P and Np problems:
+  P: Problems solvable in polynomial time.
+  NP: Problems verifiable in polynomial time.
+  Open question: Is P = NP? (Unresolved since 1971)
+  Implications: A proof would revolutionize cryptography, optimization, and more.
+
+
+
+
+
+
 
 
 
