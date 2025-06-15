@@ -1,3 +1,11 @@
+What is this Project about?
+The idea behind this project is simple but powerful:
+Most people don't realize how fast life moves until they see it. 
+So we built a visual timeline that breaks down your life—week by week—from the day you were born.
+
+With this app, users can not only view every week they've lived,
+but also mark personal milestones, track major life events, and even reflect on global happenings that shaped their journey.
+___________________________________________________________________________________________________________________________________
 Project details :
 
 Step1- The following must be installed in our system- 
@@ -10,12 +18,14 @@ Step1- The following must be installed in our system-
 Extra details that i have not added -
 For Frontend(GUI)-
 (v)React/Angular
-
+--------------------------------------------------------------------------------------------------------------
 
 Step2- Type 'Spring Initialize' on a browser &
        Start Creating Spring Initializer Project structure by giving Name,ArtifactId, group name,package name & choose java , java version, springboot .
        Need to add Some dependencies like (Spring Web ,Spring Boot DevTools, Lombok, Spring Data JPA,  MySQL Driver, Validation, Spring Security)cre
        Click generate then extract that downloaded zip & open in an IDE(Eclipse/VS code etc)
+
+---------------------------------------------------------------------------------------------------------------
 
 Step3- Start developing app so, Create the following packages and classes, or any other packages & classes depending on requirements of the project.
 // === PACKAGE & CLASSES STRUCTURE ===
@@ -45,21 +55,21 @@ com.lifeinweeks.backend
 │       └── EventServiceImpl.java
 └── LifeInWeeksBackendApplication.java
 ___________________________________________________________________
-In this project things are managed:
+In this project following things are managed:
 ✅ 1. User Management 
 ✅ 2. Event Management 
 ✅ 3. Backend & DB Configuration
 ✅ 4. DTOs (Data Transfer Objects) 
 ✅ Validation 
 ✅ Error Handling
-
-✔ User Registration
+------------------------------------------------
+✅ 1. User Registration
 POST /api/user/register
 Accepts: username, email, password, birthDate
 Validates input using @Valid
 Saves user to database
 
-✔ User Login
+✅ 2. User Login
 POST /api/user/login
 Accepts: username and password
 
@@ -84,19 +94,6 @@ Event not found
 Invalid login credentials
 ____________________________________________________________________
 
-__________________________________________________________________
-Validate Security Flow-
--------------------------------------------------------------
-Action	        Endpoint	Auth Required?	Auth Type
---------------------------------------------------------------
-Register User   POST /api/auth/register	    ❌ No	None
-Login (test)	  POST /api/auth/login	    ❌ No	None
--------------------------------------------------------------
-Create Event	  POST /api/events	        ✅ Yes	Basic Auth
-View All Events GET  /api/events	        ✅ Yes	Basic Auth
-Update Event	  PUT  /api/events/{id}	 ✅ Yes	Basic Auth
-Delete Event	  DELETE /api/events/{id}	 ✅ Yes	Basic Auth
-_____________________________________________________________________
 1).Add error handling for cases like:-
 User not found
 Event not found
@@ -164,9 +161,22 @@ PUT http://localhost:8081/api/event/eventId
 
 🔹 Delete Event:
 DELETE http://localhost:8081/api/event/user/1/2/delete
-___________________________________________________________________________________________________
-Notes on Security:
+
+_____________Notes on Security:________________________________________________________________
+
 We can use httpBasic() in the project for security.
 we can also switch to JWT for token-based authentication if preferred.
 Note: JWT is better for modern APIs (especially for Angular frontend). 
+__________________________________________________________________
+Validate Security Flow-
+------------------------------------------------------------------
+Action	        Endpoint	            Auth Required? Auth Type
+------------------------------------------------------------------
+Register User  POST /api/auth/register   ❌ No	       None
+Login (test)	 POST /api/auth/login      ❌ No	       None
+-------------------------------------------------------------------
+Create Event	  POST /api/events	        ✅ Yes	Basic Auth
+View All Events GET  /api/events	        ✅ Yes	Basic Auth
+Update Event	  PUT  /api/events/{id}	 ✅ Yes	Basic Auth
+Delete Event	  DELETE /api/events/{id}	 ✅ Yes	Basic Auth
 
