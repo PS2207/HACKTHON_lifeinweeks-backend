@@ -1,0 +1,178 @@
+Project details :
+
+Step1- The following must be installed in our system- 
+(i) JAVA (Programming language)
+(ii)Springboot maven project (Java framework for fast development)
+(ii)MySQL (Database to store data)
+(iii)POSTMAN (for sending request to server or send data to server in the form of JSON, since not created GUI using REACT/ANGULAR for sending request to server). we can also use Swagger to send request to server.
+(iv)Git (to upload projects on our github account)
+
+Extra details that i have not added -
+For Frontend(GUI)-
+(v)React/Angular
+
+
+Step2- Type 'Spring Initialize' on a browser &
+       Start Creating Spring Initializer Project structure by giving Name,ArtifactId, group name,package name & choose java , java version, springboot .
+       Need to add Some dependencies like (Spring Web ,Spring Boot DevTools, Lombok, Spring Data JPA,  MySQL Driver, Validation, Spring Security)cre
+       Click generate then extract that downloaded zip & open in an IDE(Eclipse/VS code etc)
+
+Step3- Start developing app so, Create the following packages and classes, or any other packages & classes depending on requirements of the project.
+// === PACKAGE & CLASSES STRUCTURE ===
+
+com.lifeinweeks.backend
+├── controller
+│   └── AuthController.java
+│   └── EventController.java
+├── dto
+│   └── LoginRequestDto.java
+│   └── RegisterRequestDto.java
+│   └── EventDto.java
+├── entity
+│   └── User.java
+│   └── Event.java
+├── exception
+│   └── ResourceNotFoundException.java
+│   └── ValidationException.java
+├── repository
+│   └── UserRepository.java
+│   └── EventRepository.java
+├── service
+│   └── UserService.java
+│   └── EventService.java
+│   └── impl
+│       └── UserServiceImpl.java
+│       └── EventServiceImpl.java
+└── LifeInWeeksBackendApplication.java
+___________________________________________________________________
+In this project things are managed:
+✅ 1. User Management 
+✅ 2. Event Management 
+✅ 3. Backend & DB Configuration
+✅ 4. DTOs (Data Transfer Objects) 
+✅ Validation 
+✅ Error Handling
+
+✔ User Registration
+POST /api/user/register
+Accepts: username, email, password, birthDate
+Validates input using @Valid
+Saves user to database
+
+✔ User Login
+POST /api/user/login
+Accepts: username and password
+
+✅ 3. Backend & DB Configuration
+Configured MySQL database with Hibernate JPA
+JDBC connection using application.properties
+Table auto-creation using spring.jpa.hibernate.ddl-auto=update
+Show SQL logs using spring.jpa.show-sql=true
+
+✅ 4. DTOs (Data Transfer Objects)
+RegisterRequestDto, LoginRequestDto, UserResponseDto for clean API input/output
+EventDto for event input/output
+
+✅ Validation
+Using @Valid, @NotBlank, @Email, etc. in DTOs
+Error messages shown if fields are missing or invalid
+
+✅ Error Handling
+Custom ResourceNotFoundException thrown if:
+User not found
+Event not found
+Invalid login credentials
+____________________________________________________________________
+
+__________________________________________________________________
+Validate Security Flow-
+-------------------------------------------------------------
+Action	        Endpoint	Auth Required?	Auth Type
+--------------------------------------------------------------
+Register User   POST /api/auth/register	    ❌ No	None
+Login (test)	  POST /api/auth/login	    ❌ No	None
+-------------------------------------------------------------
+Create Event	  POST /api/events	        ✅ Yes	Basic Auth
+View All Events GET  /api/events	        ✅ Yes	Basic Auth
+Update Event	  PUT  /api/events/{id}	 ✅ Yes	Basic Auth
+Delete Event	  DELETE /api/events/{id}	 ✅ Yes	Basic Auth
+_____________________________________________________________________
+1).Add error handling for cases like:-
+User not found
+Event not found
+Access denied
+Validation errors
+
+###################################################################################
+APIs For Sending request to Server using POSTMAN JSON data :-
+------------------------------------------------------------------------------
+Send User data in json form like the follwing using these apis- 
+------------------------------------------------------------------------------
+For User Registration:-
+(i) Api - POST http://localhost:8081/api/user/register
+(ii)Json data
+{
+  "username": "testuser",
+  "password": "test123",
+  "email": "test@example.com",
+  "birthDate": "2000-01-01"
+}
+-------------------------------------------------------------------
+For User Login :-
+(i) Api -  POST http://localhost:8081/api/user/login
+(ii)Json data
+{
+  "username": "testuser",
+  "password": "test123"
+}
+_________________________________________________________________________
+🔹 Create Event :
+POST http://localhost:8081/api/event/user/userId/create
+Body (JSON):
+--------------------------------------------------
+1
+  {
+    "title": "Joined University",
+    "category": "Education",
+    "description": "Started computer science degree",
+    "date": "2018-08-10"
+  }
+-------------------------------
+2
+{
+  "title": "My Milestone",
+  "category": "Personal",
+  "description": "Graduated!",
+  "date": "2022-06-01"
+}
+-------------------------------
+3.
+  {
+    "title": "Started Hackathon Project",
+    "category": "Project",
+    "description": "Began developing 'Life in Weeks' app",
+    "date": "2025-06-10"
+  }
+--------------------------------------------------------------------
+🔹 Get All Events:
+GET http://localhost:8081/api/event/user/userId/getAll
+(Use same Basic Auth)
+
+🔹 Update Event:
+PUT http://localhost:8081/api/event/eventId
+
+🔹 Delete Event:
+DELETE http://localhost:8081/api/event/user/1/2/delete
+___________________________________________________________________________________________________
+🔒 Notes on Security:
+Since using httpBasic() in SecurityConfig, every request must include Basic Auth credentials.
+Later, we can also switch to JWT for token-based authentication if preferred.
+Note: JWT is better for modern APIs (especially for Angular frontend). 
+
+
+
+
+
+
+
+(Use same Basic Auth)
