@@ -104,17 +104,17 @@ Access denied
 Validation errors
 
 ###################################################################################
-APIs For Sending request to Server using POSTMAN JSON data :-
-------------------------------------------------------------------------------
+
+_____________________USER IN POSTMAN______________________________________________________
 Send User data in json form like the follwing using these apis- 
 ------------------------------------------------------------------------------
 For User Registration:-
 (i) Api - POST http://localhost:8081/api/user/register
 (ii)Json data
 {
-  "username": "testuser",
-  "password": "test123",
-  "email": "test@example.com",
+  "username": "pragya",
+  "password": "pragya123",
+  "email": "p@example.com",
   "birthDate": "2000-01-01"
 }
 -------------------------------------------------------------------
@@ -122,10 +122,11 @@ For User Login :-
 (i) Api -  POST http://localhost:8081/api/user/login
 (ii)Json data
 {
-  "username": "testuser",
-  "password": "test123"
+  "username": "pragya",
+  "password": "pragya123"
 }
-_________________________________________________________________________
+
+____________________EVENT IN POSTMAN_____________________________________________________
 🔹 Create Event :
 POST http://localhost:8081/api/event/user/userId/create
 Body (JSON):
@@ -164,15 +165,8 @@ PUT http://localhost:8081/api/event/eventId
 🔹 Delete Event:
 DELETE http://localhost:8081/api/event/user/1/2/delete
 ___________________________________________________________________________________________________
-🔒 Notes on Security:
-Since using httpBasic() in SecurityConfig, every request must include Basic Auth credentials.
-Later, we can also switch to JWT for token-based authentication if preferred.
+Notes on Security:
+We can use httpBasic() in the project for security.
+we can also switch to JWT for token-based authentication if preferred.
 Note: JWT is better for modern APIs (especially for Angular frontend). 
 
-
-
-
-
-
-
-(Use same Basic Auth)
