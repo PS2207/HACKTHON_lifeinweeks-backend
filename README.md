@@ -9,17 +9,20 @@ ________________________________________________________________________________
 Project details :
 
 Step1- The following must be installed in our system- 
-(i) JAVA (Programming language)
-(ii)Springboot maven project (Java framework for fast development)
-(ii)MySQL (Database to store data)
-(iii)POSTMAN (for sending request to server or send data to server in the form of JSON, since not created GUI using REACT/ANGULAR for sending request to server). we can also use Swagger to send request to server.
-(iv)Git (to upload projects on our github account)
+(i)  JAVA (Programming language)
+(ii) IDE (Eclipse/vscode)
+(iii)MySQL (Database to store data)
+(iv) POSTMAN (for sending request to server or send data to server in the form of JSON, since not created GUI using REACT/ANGULAR for sending request to server). we can also use Swagger to send request to server.
+(v)Git (to upload projects on our github account)
 
 Extra details that i have not added -
 For Frontend(GUI)-
 (v)React/Angular
 --------------------------------------------------------------------------------------------------------------
-
+Note: This is a Springboot + maven project (Powerful combo for building and running Java backend projects easily)	
+      Spring Boot(Java framework to build web apps fast) 
+      Maven(Tool to manage dependencies & build process)
+-------------------------------------------------------------
 Step2- Type 'Spring Initialize' on a browser &
        Start Creating Spring Initializer Project structure by giving Name,ArtifactId, group name,package name & choose java , java version, springboot .
        Need to add Some dependencies like (Spring Web ,Spring Boot DevTools, Lombok, Spring Data JPA,  MySQL Driver, Validation, Spring Security)cre
