@@ -194,4 +194,38 @@ Create Event	  POST /api/events	        ✅ Yes	Basic Auth
 View All Events     GET/api/events	              ✅ Yes	Basic Auth
 Update Event	  PUT  /api/events/{id}	        ✅ Yes	Basic Auth
 Delete Event	  DELETE /api/events/{id}	  ✅ Yes	Basic Auth
+*****************************************************************************************************
+
+application properties changed from this to deploy on cloud:
+# MySQL DB Config
+spring.datasource.url=jdbc:mysql://localhost:3306/lifeinweeks_db
+spring.datasource.username=root
+spring.datasource.password=7488
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+# JPA Config
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+
+# Swagger for documents all apis
+#springdoc.api-docs.path=/api-docs
+#springdoc.swagger-ui.path=/swagger-ui.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
