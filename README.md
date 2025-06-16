@@ -65,7 +65,19 @@ In this project following things are managed:
 ✅ 4. DTOs (Data Transfer Objects) 
 ✅ Validation 
 ✅ Error Handling
-------------------------------------------------
+----------------------------------------------------
+Its apis are-
+For User Apis-
+POST: http://localhost:8081/api/user/register
+POST: http://localhost:8081/api/user/login
+
+For User Event Apis-
+POST: http://localhost:8081/api/event/user/2/create
+GET: http://localhost:8081/api/event/user/2/getAll
+POST: http://localhost:8081/api/event/1
+DELETE: http://localhost:8081/api/event/user/1/1/delete
+
+--------------------------------------------------------
 ✅ 1. User Registration
 POST /api/user/register
 Accepts: username, email, password, birthDate
@@ -163,7 +175,7 @@ GET http://localhost:8081/api/event/user/userId/getAll
 PUT http://localhost:8081/api/event/eventId
 
 🔹 Delete Event:
-DELETE http://localhost:8081/api/event/user/1/2/delete
+DELETE http://localhost:8081/api/event/user/userId/eventId/delete
 
 _____________Notes on Security:________________________________________________________________
 
