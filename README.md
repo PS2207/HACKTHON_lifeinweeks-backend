@@ -175,11 +175,11 @@ Validate Security Flow-
 ------------------------------------------------------------------
 Action	        Endpoint	            Auth Required? Auth Type
 ------------------------------------------------------------------
-Register User  POST /api/auth/register   ❌ No	       None
+Register User      POST /api/auth/register   ❌ No	       None
 Login (test)	 POST /api/auth/login      ❌ No	       None
 -------------------------------------------------------------------
 Create Event	  POST /api/events	        ✅ Yes	Basic Auth
-View All Events GET  /api/events	        ✅ Yes	Basic Auth
-Update Event	  PUT  /api/events/{id}	 ✅ Yes	Basic Auth
-Delete Event	  DELETE /api/events/{id}	 ✅ Yes	Basic Auth
+View All Events     GET/api/events	              ✅ Yes	Basic Auth
+Update Event	  PUT  /api/events/{id}	        ✅ Yes	Basic Auth
+Delete Event	  DELETE /api/events/{id}	  ✅ Yes	Basic Auth
 
