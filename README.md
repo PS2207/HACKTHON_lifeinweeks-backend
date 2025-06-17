@@ -253,7 +253,10 @@ services:
       - key: SPRING_DATASOURCE_PASSWORD
         value:"password of postgre db created on render"
 
-
+#--------------------------------------------------------------
+if aks render then fill-
+Build command=  ./mvnw clean install
+Start command=  java -jar target/*.jar  OR  java -jar target/lifeinweeks-backend-0.0.1-SNAPSHOT.jar
 
 
 
