@@ -213,7 +213,45 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 #springdoc.swagger-ui.path=/swagger-ui.html
 
 
+#_____________________________________________________________________________________________________________
+#How to Connect Front-end Angular(deployed on Netlify ) to Back-end Spring Boot(deployed on render):
+Note:  Angular Frontend needs to know where the Backend is, similarly Spring Boot Backend also needs to know where requests are coming from.
+1.Get Your render backend URL- here 'https://lifeinweeks-backend.onrender.com/api'
+2.Update Angular's API base URL-  In api.service.ts or environment.prod.ts (where back-end dev URL is placed)
+3.Update Config class- 'https://lifeinweeks-frontend.netlify.app' 
+#______________________________________________________________________________________________________________________
+To deploy on render successfully, need to do first: -
+Run this 'chmod +x mvnw' on gitbash on local within project path - (this command adds  'execute' permission to the mvnw file)
+Without this permission, Render throws a "Permission denied" error during build
 
+Now that mvnw is executable:
+Commit and push the change to GitHub:
+git add mvnw
+git commit -m "Add execute permission to mvnw"
+git push origin master
+
+Why it matters:
+Render\u2019s build system uses Linux.
+On Linux, a script like mvnw must be executable to run it.
+chmod +x mvnw ensures it can be executed on Render.
+
+#_______Also create render.yaml file in project add these properties____________________________________
+
+services:
+  - type: web
+    name: lifeinweeks-backend
+    env: java
+    buildCommand: ./mvnw clean install
+    startCommand: java -jar target/lifeinweeks-backend-0.0.1-SNAPSHOT.jar
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: SPRING_DATASOURCE_URL
+        value: "jdbc:postgresql://dpg-d1847jodl3ps738pqsjg-a.oregon-postgres.render.com:5432/lifeinweeks_db"
+      - key: SPRING_DATASOURCE_USERNAME
+        value: "lifeinweeks_db_user"
+      - key: SPRING_DATASOURCE_PASSWORD
+        value:"password of postgre db created on render"
 
 
 
