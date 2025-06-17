@@ -8,7 +8,7 @@ services:
       - key: PORT
         value: 8080
       - key: SPRING_DATASOURCE_URL
-        value: "dbc:postgresql://dpg-d1847jodl3ps738pqsjg-a.oregon-postgres.render.com:5432/lifeinweeks_db"
+        value: "jdbc:postgresql://dpg-d1847jodl3ps738pqsjg-a.oregon-postgres.render.com:5432/lifeinweeks_db"
       - key: SPRING_DATASOURCE_USERNAME
         value: "lifeinweeks_db_user"
       - key: SPRING_DATASOURCE_PASSWORD
