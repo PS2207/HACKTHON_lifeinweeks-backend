@@ -258,7 +258,15 @@ if aks render then fill-
 Build command=  ./mvnw clean install
 Start command=  java -jar target/*.jar  OR  java -jar target/lifeinweeks-backend-0.0.1-SNAPSHOT.jar
 
-
+#------------------------------------
+when create db in render it provides like this:
+Hostname =dpg-d1847jodl3ps738pqsjg-a
+Port =5432
+Database= lifeinweeks_db
+Username =lifeinweeks_db_user
+Password = tskA5PPESvSdSM6UseZZTeLwdH3P0aN
+External Database URL =postgresql://lifeinweeks_db_user:tskA5PPESvSdSM6UseZZTeLwdH3P0aNA@dp-d1847jodl3ps738pqsjg-a.oregon-postgres.render.com/lifeinweeks_db
+#------------------------------------
 
 
 
