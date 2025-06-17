@@ -1,7 +1,7 @@
 services:
   - type: web
     name: lifeinweeks-backend
-    runtime: java
+    env: java
     buildCommand: ./mvnw clean install
     startCommand: java -jar target/lifeinweeks-backend-0.0.1-SNAPSHOT.jar
     envVars:
